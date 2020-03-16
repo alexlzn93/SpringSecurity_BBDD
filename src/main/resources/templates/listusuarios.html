@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+   
+    <table>
+   <th:block th:each="u : ${usuarios}">
+      <tr>
+         <td th:text="${u.id}">...</td>
+         <td th:text="${u.usuario}">...</td>
+        <td colspan="2" th:text="${u.password}">...</td>
+      </tr>
+   </th:block>
+</table>
+<form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+</form>
+</body>
+</html>
